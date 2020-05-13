@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css'
 import Courses from './containers/Courses/Courses';
 import Users from './containers/Users/Users';
-import { BrowserRouter, NavLink, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, NavLink, Redirect, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -44,6 +44,7 @@ class App extends Component {
             <Switch>
               <Route path="/users" component={Users} />
               <Route path="/courses" component={Courses} />
+              <Redirect from="/all-courses" to="/courses" />
               <Route render={() => <h1 style={{textAlign: 'center'}}>404 Not Found</h1>} />
             </Switch>
           </div>
